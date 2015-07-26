@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bonsai Bot Controller v0.0.1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<h1>Bonsai Bot Controller<small> v0.0.1</small></h1>
+		</div>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="btn-group btn-group-lg btn-group-justified">
+				<a href="#" class="btn btn-primary disabled">...</a>
+				<a id="fwd" href="#" class="btn btn-primary">Fwd</a>
+				<a href="#" class="btn btn-primary disabled">...</a>
+			</div>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="btn-group btn-group-lg btn-group-justified">
+				<a id="left" href="#" class="btn btn-primary">Left</a>
+				<a id="bwd" href="#" class="btn btn-primary">Bwd</a>
+				<a id="right" href="#" class="btn btn-primary">Right</a>
+			</div>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">This program uses the following Node.js packages:<br>Express<br>socket.io<br>serialport</div>
+		<div class="col-sm-4"></div>
+	</div>
+	
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		var socket = io();
+		$('#fwd').click(function(){
+			socket.emit('rover message', 'fwd');
+			return false;
+		});
+		$('#bwd').click(function(){
+			socket.emit('rover message', 'bwd');
+			return false;
+		});
+		$('#left').click(function(){
+			socket.emit('rover message', 'left');
+			return false;
+		});
+		$('#right').click(function(){
+			socket.emit('rover message', 'right');
+			return false;
+		});
+	</script>
+</div>
+</body>
+</html>
