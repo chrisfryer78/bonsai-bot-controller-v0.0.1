@@ -1,0 +1,10 @@
+{
+  "name": "bonsai-bot-controller",
+  "version": "0.0.1",
+  "description": "A program for controlling Bonsai Bot rovers",
+  "dependencies": {
+    "express": "4.13.1",
+    "socket.io": "1.3.6",
+    "serialport": "1.7.4"
+  }
+}
